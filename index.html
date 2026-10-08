@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>家計簿</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="kakeibo.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <h1>
+      <span class="app-icon" aria-hidden="true">¥</span>
+      家計簿
+    </h1>
+
+    <p class="balance-card">
+      <span class="balance-label">合計金額</span>
+      <span id="total-amount">0円</span>
+    </p>
+
+    <section class="card transactions-card">
+      <h2>登録したデータ</h2>
+      <ul id="transaction-list"></ul>
+    </section>
+
+    <section class="card form-card">
+      <h2>データの登録</h2>
+      <p id="form-message" role="alert" hidden></p>
+      <form>
+        <div class="form-field">
+          <label for="date">日付</label>
+          <input type="date" id="date">
+        </div>
+
+        <div class="form-field">
+          <label for="item">品目</label>
+          <input type="text" id="item">
+        </div>
+
+        <div class="form-field">
+          <label for="transaction-type">支出／収入</label>
+          <select id="transaction-type">
+            <option value="expense">支出</option>
+            <option value="income">収入</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="amount">金額</label>
+          <div class="amount-field">
+            <input type="number" id="amount" min="1" step="1" aria-describedby="amount-unit">
+            <span id="amount-unit" class="amount-unit">円</span>
+          </div>
+        </div>
+
+        <button type="button" id="add-button">追加</button>
+      </form>
+    </section>
+  </main>
+</body>
+
+</html>
